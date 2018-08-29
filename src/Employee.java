@@ -64,6 +64,7 @@ public class Employee {
 	public void setStatus(boolean status) {
 		workStatus = status;
 	}
+	int seniorityLvl = 0;
 	
 	public void setWarnings(int warnings) {
 		this.warnings = warnings;
@@ -79,10 +80,19 @@ public class Employee {
 	 * @return 
 	 */
 	public int seniorityLevel() {
+		int seniorityLvl = 0;
+		if (yearService<1){
+			seniorityLvl = 0;
+		}
+		else if(yearService>=1 && yearService<5){
+			seniorityLvl =1;
+		}
+		else if (yearService>=5 && yearService<10){
+			seniorityLvl = 2;	
+		}
+		else seniorityLvl = 3;
 		
-		//Add Code Here [You have to use If/Else to get graded]
-		
-		return 0;// Temporal Return
+		return seniorityLvl;// Temporal Return
 		
 	}
 }
